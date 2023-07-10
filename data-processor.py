@@ -11,7 +11,7 @@ for i in range(3):  # Iterate through all 3 files
                 formatted_row.append(row[4])  # Append date
                 formatted_row.append(row[3])  # Append region
                 sales = float(row[1].strip("$")) * int(row[2])  # Calculate sales
-                formatted_row.append(f"${sales}")  # Append sales
+                formatted_row.append(sales)  # Append sales
                 pink_morsel.append(formatted_row)
 
 with open("data/pink_morsel.csv", "w") as csvfile:  # Create new file
