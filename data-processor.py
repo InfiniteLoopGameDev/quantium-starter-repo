@@ -15,7 +15,7 @@ for i in range(3):  # Iterate through all 3 files
                 pink_morsel.append(formatted_row)
 
 with open("data/pink_morsel.csv", "w") as csvfile:  # Create new file
-    fieldnames = ["date", "region", "sales"]
+    fieldnames = ["region", "date", "sales"]
     writer = csv.writer(csvfile, delimiter=",")
     writer.writerow(fieldnames)  # Write header
     writer.writerows(pink_morsel)  # Write data

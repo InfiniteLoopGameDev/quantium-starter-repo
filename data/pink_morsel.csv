@@ -1,4 +1,4 @@
-date,region,sales
+region,date,sales
 north,2018-02-06,$1638.0
 south,2018-02-06,$1647.0
 east,2018-02-06,$1731.0
