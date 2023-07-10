@@ -12,16 +12,16 @@ fig = px.line(data, x='date', y='sales', color='region')
 graph = dcc.Graph(
     figure=fig,
     style={
-        'width' : '80vw',
-        'height' : '80vh',
+        'width': '80vw',
+        'height': '80vh',
         'display': 'block',
         'margin': 'auto',
     },
     id='graph')
 
 header = html.H1('Pink Morsel Sales', style={
-        'textAlign': 'center',
-        'fontFamily': 'sans-serif'
+    'textAlign': 'center',
+    'fontFamily': 'sans-serif'
 })
 
 radio = dcc.RadioItems(
@@ -45,6 +45,7 @@ app.layout = html.Div([
     radio
 ])
 
+
 @callback(
     Output('graph', 'figure'),
     Input('radio', 'value'))
@@ -54,12 +55,12 @@ def update_graph(selected):
         selected = ["north", "east", "south", "west"]
     filtered_data = data[data.region.isin(selected)]
     fig = px.line(filtered_data, x='date', y='sales', color='region', labels={
-    'date': 'Date',
-    'sales': 'Sales ($)',
-    'region': 'Region',
-})
+        'date': 'Date',
+        'sales': 'Sales ($)',
+        'region': 'Region',
+    })
     fig.update_layout()
     return fig
-                      
+
 if __name__ == '__main__':
     app.run_server(debug=True)
